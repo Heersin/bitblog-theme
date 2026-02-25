@@ -1,0 +1,44 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "Paper Mono"
+theme = "bitblog-theme"
+paginate = 5
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  description = "Retro pixel monochrome Hugo theme inspired by Paper."
+
+[params.home]
+  title = "Night Log"
+  intro = "在像素化夜空里记录文字，把思考放进海面反光。"
+  moonLabel = "月亮"
+  seaLabel = "海洋"
+  feedTitle = "Recent Entries"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Articles"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "Category"
+  url = "/categories/"
+  weight = 3
+
+[[menu.main]]
+  name = "Tag"
+  url = "/tags/"
+  weight = 4
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 5

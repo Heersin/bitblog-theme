@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="shell page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+  </header>
+
+  {{ range .Paginator.Pages }}
+    <article class="post-row">
+      {{ if .Params.featured }}<span class="chip">Featured</span>{{ end }}
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p class="meta">{{ .Date.Format "Jan 2, 2006" }}</p>
+    </article>
+  {{ end }}
+
+  {{ with .Paginator }}
+    <nav class="pager">
+      {{ if .HasPrev }}<a class="btn" href="{{ .Prev.URL }}">← Prev</a>{{ end }}
+      {{ if .HasNext }}<a class="btn" href="{{ .Next.URL }}">Next →</a>{{ end }}
+    </nav>
+  {{ end }}
+</section>
+{{ end }}

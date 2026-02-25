@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="hero-scene shell">
+  <div class="sky-panel pixel-border">
+    <div class="moon-wrap">
+      <div class="moon" data-moon-phase></div>
+      <p class="moon-label">{{ default "月亮" .Site.Params.home.moonLabel }}</p>
+    </div>
+    <div class="intro pixel-border">
+      <h1>{{ default .Site.Title .Site.Params.home.title }}</h1>
+      <p>{{ default .Site.Params.description .Site.Params.home.intro }}</p>
+    </div>
+  </div>
+
+  <div class="horizon-line" aria-hidden="true"></div>
+
+  <div class="sea-panel pixel-border">
+    <p class="sea-text">{{ default "海洋" .Site.Params.home.seaLabel }}</p>
+  </div>
+</section>
+
+<section class="post-feed shell">
+  {{ with .Site.Params.home.feedTitle }}<h2>{{ . }}</h2>{{ end }}
+  {{ range first 6 (where .Site.RegularPages "Type" "in" (slice "posts" "post")) }}
+    <article class="post-card">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p class="meta">{{ .Date.Format "Jan 2, 2006" }}</p>
+      {{ with .Summary }}<p>{{ . | plainify | truncate 120 }}</p>{{ end }}
+    </article>
+  {{ end }}
+</section>
+{{ end }}
