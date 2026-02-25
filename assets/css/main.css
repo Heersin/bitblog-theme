@@ -178,25 +178,17 @@ a {
 }
 
 .horizon-line {
-  min-height: 42px;
+  min-height: 18px;
   border-top: 2px solid var(--line);
   border-bottom: 2px solid var(--line);
-  background: repeating-linear-gradient(
-    -75deg,
-    #fff,
-    #fff 2px,
-    transparent 2px,
-    transparent 8px
-  );
+  background: #090a0d;
 }
 
 .sea-panel {
   min-height: 250px;
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 18%),
-    linear-gradient(180deg, #080a0d 0%, #06070a 100%);
+  background: #07090c;
 }
 
 .sea-panel::before,
@@ -210,32 +202,34 @@ a {
 .sea-panel::before {
   background:
     repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.12) 0,
-      rgba(255, 255, 255, 0.12) 1px,
+      90deg,
+      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.06) 1px,
       transparent 1px,
-      transparent 11px
+      transparent 12px
     ),
-    radial-gradient(ellipse at 50% -6%, rgba(255, 255, 255, 0.3), transparent 64%),
-    radial-gradient(ellipse at 50% 28%, rgba(255, 255, 255, 0.16), transparent 58%);
-  mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0, rgba(255, 255, 255, 0.18) 45%, rgba(255, 255, 255, 0) 100%);
-  opacity: 0.78;
-  transform-origin: center top;
-  animation: tideDrift 6.8s ease-in-out infinite;
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.14) 0,
+      rgba(255, 255, 255, 0.14) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+  opacity: 0.44;
+  animation: seaGridShift 3.4s steps(6, end) infinite;
 }
 
 .sea-panel::after {
-  background-image:
-    radial-gradient(ellipse at 50% 4%, rgba(255, 255, 255, 0.3) 0 18%, transparent 36%),
-    radial-gradient(ellipse at 50% 14%, rgba(255, 255, 255, 0.22) 0 14%, transparent 34%),
-    radial-gradient(ellipse at 50% 29%, rgba(255, 255, 255, 0.16) 0 12%, transparent 30%),
-    radial-gradient(ellipse at 50% 46%, rgba(255, 255, 255, 0.16) 0 10%, transparent 24%),
-    radial-gradient(ellipse at 50% 63%, rgba(255, 255, 255, 0.13) 0 8%, transparent 21%),
-    radial-gradient(ellipse at 50% 78%, rgba(255, 255, 255, 0.1) 0 7%, transparent 20%);
-  background-repeat: no-repeat;
-  mix-blend-mode: screen;
-  filter: blur(0.2px);
-  animation: seaSparkle 4.2s steps(9, end) infinite;
+  content: ". .  .  . .   .  . . .   .  . .\A~ ~ ~~ ~~~ ~~ ~~ ~~~ ~~ ~ ~~ ~\A..  .. .  ..   .. .  ..  .  ..\A- - -- --- -- --- -- --- -- - -\A.  . . .   .  . . .   . .   . .\A~~ ~~~ ~~ ~~ ~~~ ~~ ~~~ ~~ ~~ ~~";
+  white-space: pre;
+  display: block;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  line-height: 1.34;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.36);
+  font-family: "Courier New", "Lucida Console", monospace;
+  animation: seaAsciiFlicker 2.8s steps(7, end) infinite;
 }
 
 .sea-panel .ship-reflection {
@@ -253,7 +247,7 @@ a {
     rgba(255, 255, 255, 0) 12px
   );
   clip-path: polygon(50% 0, 72% 100%, 28% 100%);
-  opacity: 0.36;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -349,16 +343,16 @@ a {
   100% { opacity: 0.74; }
 }
 
-@keyframes tideDrift {
-  0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.7; }
-  50% { transform: translateY(5px) scaleY(1.05); opacity: 0.94; }
+@keyframes seaGridShift {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(1px); opacity: 0.52; }
 }
 
-@keyframes seaSparkle {
-  0%, 100% { opacity: 0.22; }
-  25% { opacity: 0.54; }
-  50% { opacity: 0.3; }
-  75% { opacity: 0.62; }
+@keyframes seaAsciiFlicker {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  20% { opacity: 0.48; }
+  44% { opacity: 0.24; transform: translateY(1px); }
+  68% { opacity: 0.42; }
 }
 
 @media (max-width: 760px) {
