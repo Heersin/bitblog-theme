@@ -72,7 +72,6 @@ a {
 
 .pixel-border {
   border: 2px solid var(--line);
-  box-shadow: 6px 6px 0 #000;
 }
 
 .hero-scene {
@@ -83,22 +82,52 @@ a {
 
 .sky-panel {
   min-height: 380px;
-  background:
-    radial-gradient(circle at 15% 20%, #fff 0 1px, transparent 1px),
-    radial-gradient(circle at 30% 35%, #fff 0 1px, transparent 1px),
-    radial-gradient(circle at 55% 14%, #fff 0 1px, transparent 1px),
-    radial-gradient(circle at 72% 30%, #fff 0 1px, transparent 1px),
-    linear-gradient(var(--sky), #0f0f0f);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(#07080b, #0c0d11 62%, #0e0f13);
   display: flex;
   align-items: flex-start;
   padding: 2rem;
   gap: 2rem;
 }
 
+.sky-panel::before,
+.sky-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sky-panel::before {
+  background-image:
+    radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 16% 42%, rgba(255, 255, 255, 0.92) 0 1.1px, transparent 1.9px),
+    radial-gradient(circle at 27% 16%, rgba(255, 255, 255, 0.78) 0 1px, transparent 2px),
+    radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.88) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 48% 12%, rgba(255, 255, 255, 0.76) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 58% 34%, rgba(255, 255, 255, 0.96) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 72% 14%, rgba(255, 255, 255, 0.74) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 26%, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.96) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 78% 44%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.9px);
+  animation: starlightBlink 7s steps(12, end) infinite;
+}
+
+.sky-panel::after {
+  background-image:
+    radial-gradient(circle at 11% 30%, rgba(255, 255, 255, 0.45) 0 2px, transparent 3.5px),
+    radial-gradient(circle at 53% 26%, rgba(255, 255, 255, 0.32) 0 2px, transparent 3px),
+    radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.38) 0 1.8px, transparent 3px),
+    radial-gradient(circle at 70% 38%, rgba(255, 255, 255, 0.28) 0 2px, transparent 3px);
+  opacity: 0.5;
+  animation: starlightPulse 5.2s ease-in-out infinite alternate;
+}
+
 .moon-wrap {
   display: grid;
   place-items: center;
-  gap: 0.6rem;
 }
 
 .moon {
@@ -109,6 +138,7 @@ a {
   position: relative;
   background: #fff;
   overflow: hidden;
+  z-index: 1;
 }
 
 .moon::after {
@@ -120,13 +150,13 @@ a {
   transform: translateX(var(--phase-offset, 0%));
 }
 
-.moon-label { margin: 0; font-size: 0.9rem; color: var(--muted); }
-
 .intro {
   width: min(540px, 100%);
   min-height: 210px;
   padding: 1.6rem;
   background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
 }
 
 .intro h1 {
@@ -150,22 +180,42 @@ a {
 
 .sea-panel {
   min-height: 250px;
-  display: grid;
-  place-items: center;
-  background: repeating-linear-gradient(
-      0deg,
-      #0a0a0a,
-      #0a0a0a 8px,
-      #101010 8px,
-      #101010 16px
-    ),
-    var(--sea);
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 22%),
+    linear-gradient(180deg, #080a0d 0%, #06070a 100%);
 }
 
-.sea-text {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
+.sea-panel::before,
+.sea-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sea-panel::before {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.08) 0,
+      rgba(255, 255, 255, 0.08) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+  transform-origin: center;
+  animation: tideDrift 8s ease-in-out infinite;
+}
+
+.sea-panel::after {
+  background-image:
+    radial-gradient(ellipse at 18% 58%, rgba(255, 255, 255, 0.18) 0 10%, transparent 38%),
+    radial-gradient(ellipse at 42% 72%, rgba(255, 255, 255, 0.15) 0 9%, transparent 35%),
+    radial-gradient(ellipse at 68% 62%, rgba(255, 255, 255, 0.18) 0 10%, transparent 38%),
+    radial-gradient(ellipse at 84% 76%, rgba(255, 255, 255, 0.14) 0 8%, transparent 34%);
+  mix-blend-mode: screen;
+  animation: seaSparkle 4.6s steps(8, end) infinite;
 }
 
 .post-feed,
@@ -243,6 +293,32 @@ a {
   border-top: 2px solid var(--line);
   padding: 1rem 0 2rem;
   color: var(--muted);
+}
+
+
+@keyframes starlightBlink {
+  0%, 100% { opacity: 0.5; }
+  20% { opacity: 0.88; }
+  40% { opacity: 0.35; }
+  60% { opacity: 0.95; }
+  80% { opacity: 0.6; }
+}
+
+@keyframes starlightPulse {
+  0% { opacity: 0.25; }
+  100% { opacity: 0.68; }
+}
+
+@keyframes tideDrift {
+  0%, 100% { transform: translateY(0); opacity: 0.72; }
+  50% { transform: translateY(6px); opacity: 0.95; }
+}
+
+@keyframes seaSparkle {
+  0%, 100% { opacity: 0.22; }
+  25% { opacity: 0.54; }
+  50% { opacity: 0.3; }
+  75% { opacity: 0.62; }
 }
 
 @media (max-width: 760px) {
