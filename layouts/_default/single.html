@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="shell prose-wrap">
+  <header class="single-header">
+    <h1>{{ .Title }}</h1>
+    <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}</p>
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,11 @@
+name = "Bitblog Mono Pixel"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A monochrome retro pixel Hugo theme with a moonlit ocean homepage."
+homepage = "https://example.com/bitblog-mono-pixel"
+tags = ["blog", "retro", "pixel", "monochrome", "dark"]
+features = ["blog", "responsive", "moon-phase-home"]
+min_version = "0.112.0"
+
+[author]
+  name = "Bitblog"

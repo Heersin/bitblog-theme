@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="shell page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="term-grid">
+    {{ range .Data.Terms.Alphabetical }}
+      <a class="term-item" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span>({{ .Count }})</span></a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

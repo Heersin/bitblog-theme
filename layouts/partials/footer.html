@@ -1,0 +1,7 @@
+<footer class="site-footer">
+  <div class="shell">
+    <small>© {{ now.Year }} {{ .Site.Title }} · Powered by Hugo</small>
+  </div>
+</footer>
+{{ $script := resources.Get "js/moon-phase.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
