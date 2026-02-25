@@ -178,17 +178,18 @@ a {
 }
 
 .horizon-line {
-  min-height: 18px;
-  border-top: 2px solid var(--line);
-  border-bottom: 2px solid var(--line);
-  background: #090a0d;
+  height: 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .sea-panel {
   min-height: 250px;
   position: relative;
   overflow: hidden;
-  background: #07090c;
+  background:
+    radial-gradient(ellipse at 50% -12%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 54%),
+    linear-gradient(#040508, #07090d 30%, #05070a 74%, #030408);
 }
 
 .sea-panel::before,
@@ -201,35 +202,44 @@ a {
 
 .sea-panel::before {
   background:
+    radial-gradient(ellipse at 52% 8%, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.08) 38%, transparent 72%),
+    radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.08) 38%, transparent 72%),
+    radial-gradient(ellipse at 48% 88%, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.08) 36%, transparent 68%),
     repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.06) 0,
-      rgba(255, 255, 255, 0.06) 1px,
+      0deg,
+      rgba(255, 255, 255, 0.9) 0,
+      rgba(255, 255, 255, 0.9) 1px,
       transparent 1px,
-      transparent 12px
+      transparent 9px
     ),
     repeating-linear-gradient(
       0deg,
-      rgba(255, 255, 255, 0.14) 0,
-      rgba(255, 255, 255, 0.14) 1px,
+      rgba(255, 255, 255, 0.44) 0,
+      rgba(255, 255, 255, 0.44) 1px,
       transparent 1px,
-      transparent 12px
+      transparent 18px
     );
-  opacity: 0.44;
+  background-position: center, center, center, 0 0, 0 0;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  opacity: 0.78;
   animation: seaGridShift 3.4s steps(6, end) infinite;
 }
 
 .sea-panel::after {
-  content: ". .  .  . .   .  . . .   .  . .\A~ ~ ~~ ~~~ ~~ ~~ ~~~ ~~ ~ ~~ ~\A..  .. .  ..   .. .  ..  .  ..\A- - -- --- -- --- -- --- -- - -\A.  . . .   .  . . .   . .   . .\A~~ ~~~ ~~ ~~ ~~~ ~~ ~~~ ~~ ~~ ~~";
+  content: "──── ──── ───── ────── ───── ────\A  ─── ───── ─────── ───── ───\A    ──── ────── ───── ────\A      ─── ────── ───── ───\A        ──── ───── ───\A          ─── ───── ───\A            ──── ────";
   white-space: pre;
   display: block;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  line-height: 1.34;
-  letter-spacing: 0.18em;
-  color: rgba(255, 255, 255, 0.36);
+  padding: 0.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.84);
   font-family: "Courier New", "Lucida Console", monospace;
-  animation: seaAsciiFlicker 2.8s steps(7, end) infinite;
+  text-align: center;
+  transform: translateY(8px) skewX(-12deg);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  mix-blend-mode: screen;
+  animation: seaAsciiFlicker 2.4s steps(6, end) infinite;
 }
 
 
