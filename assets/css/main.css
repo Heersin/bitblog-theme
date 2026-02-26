@@ -178,6 +178,7 @@ a {
 .intro {
   width: min(540px, 100%);
   min-height: 210px;
+  margin-top: clamp(1.1rem, 3vw, 1.9rem);
   padding: 1.6rem;
   background: transparent;
   position: relative;
@@ -340,14 +341,15 @@ a {
 }
 
 @keyframes seaAsciiFlicker {
-  0%, 100% { opacity: 0.56; transform: translateY(10px) skewX(-11deg); }
+  0%, 100% { opacity: 0.56; transform: translateY(10px) skewX(-9deg); }
   18% { opacity: 0.9; }
-  44% { opacity: 0.46; transform: translateY(11px) skewX(-11deg); }
-  72% { opacity: 0.82; transform: translateY(9px) skewX(-11deg); }
+  44% { opacity: 0.46; transform: translateY(11px) skewX(-9deg); }
+  72% { opacity: 0.82; transform: translateY(9px) skewX(-9deg); }
 }
 
 @media (max-width: 760px) {
   .topbar-inner { padding: 0.6rem 0; }
   .brand { font-size: 1.4rem; }
   .sky-panel { flex-direction: column; min-height: auto; }
+  .intro { margin-top: 0.8rem; }
 }
