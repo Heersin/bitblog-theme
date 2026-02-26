@@ -3,6 +3,10 @@
   <div class="sky-panel pixel-border">
     <div class="moon-wrap">
       <div class="moon" data-moon-phase></div>
+      <div class="moon-datetime" aria-live="polite">
+        <p class="moon-datetime-line" data-gregorian-datetime></p>
+        <p class="moon-datetime-line" data-lunar-datetime></p>
+      </div>
     </div>
     <div class="intro">
       <h1>{{ default .Site.Title .Site.Params.home.title }}</h1>
