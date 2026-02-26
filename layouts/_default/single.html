@@ -1,11 +1,20 @@
 {{ define "main" }}
-<article class="shell prose-wrap">
-  <header class="single-header">
-    <h1>{{ .Title }}</h1>
-    <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}</p>
-  </header>
-  <div class="prose">
-    {{ .Content }}
+<article class="shell prose-wrap single-layout">
+  <div class="single-main">
+    <header class="single-header">
+      <h1>{{ .Title }}</h1>
+      <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}</p>
+    </header>
+    <div class="prose">
+      {{ .Content }}
+    </div>
   </div>
+  {{ $toc := .TableOfContents }}
+  {{ if ne $toc "<nav id=\"TableOfContents\"></nav>" }}
+  <aside class="single-toc pixel-border" aria-label="文章大纲">
+    <p class="single-toc-title">目录</p>
+    {{ $toc }}
+  </aside>
+  {{ end }}
 </article>
 {{ end }}
