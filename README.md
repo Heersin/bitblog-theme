@@ -1,6 +1,6 @@
 # Bitblog Mono Pixel (Hugo Theme)
 
-一个参考 Paper Theme 信息架构，但视觉为 **黑白复古像素风** 的 Hugo 主题。
+黑白像素风格的Hugo Paper
 
 ## 特性
 
@@ -26,30 +26,8 @@ theme = "bitblog-theme"
 仓库自带 `exampleSite/`：
 
 ```bash
+mv exampleSite your_path
+cp -R bitblog-theme exampleSite/themes/bitblog-theme
 hugo server -s exampleSite -t bitblog-theme
 ```
 
-## 在 GitHub 仓库模式安装 Hugo（推荐）
-
-仓库已提供 CI 工作流：`.github/workflows/hugo-check.yml`，会在 `push / pull_request` 时自动安装 Hugo Extended 并执行构建检查。
-
-如需手动配置，可使用：
-
-```yaml
-- uses: peaceiris/actions-hugo@v3
-  with:
-    hugo-version: '0.124.1'
-    extended: true
-- run: hugo -s exampleSite --themesDir ..
-```
-
-## 首页参数
-
-```toml
-[params.home]
-  title = "Night Log"
-  intro = "你的 introduction"
-  moonLabel = "月亮"
-  seaLabel = "海洋"
-  feedTitle = "Recent Entries"
-```
