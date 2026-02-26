@@ -4,13 +4,14 @@
 
 ## 特性
 
-- 首页大改：上半部分夜空、月亮，下半部分海面与地平线分隔
 - 月亮相位（基础版）：会根据当前日期自动切换 `新月 / 上弦月 / 满月 / 下弦月`
 - 文章列表、文章详情、About 页保持 Paper 风格的简洁阅读布局
-- 全局统一黑白像素化风格（边框、字体、层次）
 
 <img width="3129" height="2108" alt="image" src="https://github.com/user-attachments/assets/f28a8b5b-78e0-49d4-8dab-e4f59be31836" />
 
+<img width="2853" height="1630" alt="image" src="https://github.com/user-attachments/assets/2f9a493b-d8ed-4e56-818a-9cc891b34e0f" />
+
+<img width="2688" height="1835" alt="image" src="https://github.com/user-attachments/assets/d526e650-251b-47ee-ba83-6c6179b5d69e" />
 
 ## 使用
 
