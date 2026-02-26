@@ -104,24 +104,35 @@ a {
   background-image:
     radial-gradient(circle at 4% 10%, rgba(255, 255, 255, 0.8) 0 1px, transparent 1.8px),
     radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 10% 24%, rgba(255, 255, 255, 0.76) 0 0.9px, transparent 1.7px),
     radial-gradient(circle at 12% 34%, rgba(255, 255, 255, 0.74) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 16% 42%, rgba(255, 255, 255, 0.92) 0 1.1px, transparent 1.9px),
     radial-gradient(circle at 21% 9%, rgba(255, 255, 255, 0.72) 0 0.9px, transparent 1.8px),
+    radial-gradient(circle at 24% 28%, rgba(255, 255, 255, 0.78) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 27% 16%, rgba(255, 255, 255, 0.78) 0 1px, transparent 2px),
     radial-gradient(circle at 31% 38%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 34% 20%, rgba(255, 255, 255, 0.7) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.88) 0 1.2px, transparent 2px),
     radial-gradient(circle at 41% 14%, rgba(255, 255, 255, 0.72) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 48% 12%, rgba(255, 255, 255, 0.76) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.72) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 53% 44%, rgba(255, 255, 255, 0.68) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 58% 34%, rgba(255, 255, 255, 0.96) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 61% 18%, rgba(255, 255, 255, 0.74) 0 1px, transparent 1.9px),
     radial-gradient(circle at 64% 22%, rgba(255, 255, 255, 0.76) 0 1px, transparent 1.9px),
     radial-gradient(circle at 72% 14%, rgba(255, 255, 255, 0.74) 0 1px, transparent 2px),
+    radial-gradient(circle at 74% 30%, rgba(255, 255, 255, 0.82) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 75% 40%, rgba(255, 255, 255, 0.7) 0 0.9px, transparent 1.9px),
     radial-gradient(circle at 82% 26%, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.9px),
     radial-gradient(circle at 86% 8%, rgba(255, 255, 255, 0.8) 0 0.9px, transparent 1.8px),
+    radial-gradient(circle at 88% 34%, rgba(255, 255, 255, 0.76) 0 1px, transparent 1.8px),
     radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.96) 0 1.2px, transparent 2px),
     radial-gradient(circle at 95% 30%, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 78% 44%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.9px);
+    radial-gradient(circle at 78% 44%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.67) 0 0.8px, transparent 1.7px),
+    radial-gradient(circle at 44% 36%, rgba(255, 255, 255, 0.65) 0 0.8px, transparent 1.7px),
+    radial-gradient(circle at 69% 28%, rgba(255, 255, 255, 0.63) 0 0.8px, transparent 1.7px),
+    radial-gradient(circle at 92% 22%, rgba(255, 255, 255, 0.64) 0 0.8px, transparent 1.7px);
   animation: starlightBlink 5.4s steps(14, end) infinite;
 }
 
@@ -129,10 +140,12 @@ a {
   background-image:
     radial-gradient(circle at 11% 30%, rgba(255, 255, 255, 0.42) 0 2px, transparent 3.5px),
     radial-gradient(circle at 24% 22%, rgba(255, 255, 255, 0.32) 0 1.8px, transparent 3px),
+    radial-gradient(circle at 39% 17%, rgba(255, 255, 255, 0.28) 0 1.8px, transparent 2.8px),
     radial-gradient(circle at 53% 26%, rgba(255, 255, 255, 0.34) 0 2px, transparent 3px),
     radial-gradient(circle at 67% 12%, rgba(255, 255, 255, 0.26) 0 1.8px, transparent 2.8px),
     radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.38) 0 1.8px, transparent 3px),
-    radial-gradient(circle at 70% 38%, rgba(255, 255, 255, 0.28) 0 2px, transparent 3px);
+    radial-gradient(circle at 70% 38%, rgba(255, 255, 255, 0.28) 0 2px, transparent 3px),
+    radial-gradient(circle at 79% 28%, rgba(255, 255, 255, 0.31) 0 1.8px, transparent 3px);
   opacity: 0.56;
   animation: starlightPulse 3.8s steps(10, end) infinite alternate;
 }
@@ -165,6 +178,7 @@ a {
 .intro {
   width: min(540px, 100%);
   min-height: 210px;
+  margin-top: clamp(1.1rem, 3vw, 1.9rem);
   padding: 1.6rem;
   background: transparent;
   position: relative;
@@ -212,7 +226,7 @@ a {
 }
 
 .sea-panel::after {
-  content: "      ────────────────\A    ──────────  ─────────\A  ───────  ───────────────\A    ─────────────  ─────────\A      ───────  ───────────\A         ─────────────  ───────\A            ───────  ─────────\A               ─────────────\A                  ───────";
+  content: "  ───────────────────────────  ─────────────\A    ─────────────────────  ─────────────\A      ────────────────  ─────────────\A        ─────────────  ───────────\A          ───────────  ─────────\A             ─────────  ───────\A                ───────  ─────\A                   ───────\A                      ────";
   white-space: pre;
   display: block;
   padding: 0.4rem 0;
@@ -222,7 +236,7 @@ a {
   color: rgba(255, 255, 255, 0.88);
   font-family: "Courier New", "Lucida Console", monospace;
   text-align: center;
-  transform: translateY(10px) skewX(-11deg);
+  transform: translateY(10px) skewX(-9deg);
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.45);
   animation: seaAsciiFlicker 2.2s steps(6, end) infinite;
 }
@@ -327,14 +341,15 @@ a {
 }
 
 @keyframes seaAsciiFlicker {
-  0%, 100% { opacity: 0.56; transform: translateY(10px) skewX(-11deg); }
+  0%, 100% { opacity: 0.56; transform: translateY(10px) skewX(-9deg); }
   18% { opacity: 0.9; }
-  44% { opacity: 0.46; transform: translateY(11px) skewX(-11deg); }
-  72% { opacity: 0.82; transform: translateY(9px) skewX(-11deg); }
+  44% { opacity: 0.46; transform: translateY(11px) skewX(-9deg); }
+  72% { opacity: 0.82; transform: translateY(9px) skewX(-9deg); }
 }
 
 @media (max-width: 760px) {
   .topbar-inner { padding: 0.6rem 0; }
   .brand { font-size: 1.4rem; }
   .sky-panel { flex-direction: column; min-height: auto; }
+  .intro { margin-top: 0.8rem; }
 }
