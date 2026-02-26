@@ -9,6 +9,9 @@
 - 文章列表、文章详情、About 页保持 Paper 风格的简洁阅读布局
 - 全局统一黑白像素化风格（边框、字体、层次）
 
+<img width="3129" height="2108" alt="image" src="https://github.com/user-attachments/assets/f28a8b5b-78e0-49d4-8dab-e4f59be31836" />
+
+
 ## 使用
 
 将本仓库作为主题放到你的 Hugo 站点 `themes/bitblog-theme` 下，然后在站点配置里：
