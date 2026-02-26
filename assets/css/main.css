@@ -158,10 +158,11 @@ a {
   padding-bottom: 1.6rem;
   position: relative;
   z-index: 1;
+  padding-top: 3%;
 }
 
 .moon-datetime {
-  margin-top: auto;
+  margin-top: 8%;
   min-height: 3.4rem;
   display: flex;
   flex-direction: column;
