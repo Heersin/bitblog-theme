@@ -178,17 +178,16 @@ a {
 }
 
 .horizon-line {
-  min-height: 18px;
-  border-top: 2px solid var(--line);
-  border-bottom: 2px solid var(--line);
-  background: #090a0d;
+  height: 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .sea-panel {
   min-height: 250px;
   position: relative;
   overflow: hidden;
-  background: #07090c;
+  background: #05070a;
 }
 
 .sea-panel::before,
@@ -200,36 +199,32 @@ a {
 }
 
 .sea-panel::before {
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.06) 0,
-      rgba(255, 255, 255, 0.06) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.14) 0,
-      rgba(255, 255, 255, 0.14) 1px,
-      transparent 1px,
-      transparent 12px
-    );
-  opacity: 0.44;
-  animation: seaGridShift 3.4s steps(6, end) infinite;
+  content: "────────────────────────────────────────\A  ────────────────  ───────────────\A───────────────────────  ─────────────\A    ───────────────  ────────────────\A────────────────────────────  ─────────\A      ───────────────  ─────────────\A──────────────────────  ──────────────\A         ───────────  ─────────────\A──────────────────────────────────────";
+  white-space: pre;
+  font-family: "Courier New", "Lucida Console", monospace;
+  font-size: 0.82rem;
+  line-height: 1.42;
+  letter-spacing: 0.11em;
+  color: rgba(255, 255, 255, 0.2);
+  padding: 0.45rem 0;
+  transform: translateY(1px);
+  animation: seaGridShift 3.2s steps(6, end) infinite;
 }
 
 .sea-panel::after {
-  content: ". .  .  . .   .  . . .   .  . .\A~ ~ ~~ ~~~ ~~ ~~ ~~~ ~~ ~ ~~ ~\A..  .. .  ..   .. .  ..  .  ..\A- - -- --- -- --- -- --- -- - -\A.  . . .   .  . . .   . .   . .\A~~ ~~~ ~~ ~~ ~~~ ~~ ~~~ ~~ ~~ ~~";
+  content: "      ────────────────\A    ──────────  ─────────\A  ───────  ───────────────\A    ─────────────  ─────────\A      ───────  ───────────\A         ─────────────  ───────\A            ───────  ─────────\A               ─────────────\A                  ───────";
   white-space: pre;
   display: block;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  line-height: 1.34;
-  letter-spacing: 0.18em;
-  color: rgba(255, 255, 255, 0.36);
+  padding: 0.4rem 0;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  letter-spacing: 0.13em;
+  color: rgba(255, 255, 255, 0.88);
   font-family: "Courier New", "Lucida Console", monospace;
-  animation: seaAsciiFlicker 2.8s steps(7, end) infinite;
+  text-align: center;
+  transform: translateY(10px) skewX(-11deg);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.45);
+  animation: seaAsciiFlicker 2.2s steps(6, end) infinite;
 }
 
 
@@ -326,15 +321,16 @@ a {
 }
 
 @keyframes seaGridShift {
-  0%, 100% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(1px); opacity: 0.52; }
+  0%, 100% { transform: translateY(1px); opacity: 0.16; }
+  35% { transform: translateY(0); opacity: 0.26; }
+  70% { transform: translateY(2px); opacity: 0.22; }
 }
 
 @keyframes seaAsciiFlicker {
-  0%, 100% { opacity: 0.3; transform: translateY(0); }
-  20% { opacity: 0.48; }
-  44% { opacity: 0.24; transform: translateY(1px); }
-  68% { opacity: 0.42; }
+  0%, 100% { opacity: 0.56; transform: translateY(10px) skewX(-11deg); }
+  18% { opacity: 0.9; }
+  44% { opacity: 0.46; transform: translateY(11px) skewX(-11deg); }
+  72% { opacity: 0.82; transform: translateY(9px) skewX(-11deg); }
 }
 
 @media (max-width: 760px) {
